@@ -4,13 +4,20 @@
   "description": "Download a Facebook reel's audio, transcribe it to text with mlx-whisper, and play the mp3",
   "type": "module",
   "main": "index.js",
-  "bin": { "transpose-facebook-reel": "./index.js" },
+  "bin": {
+    "transpose-facebook-reel": "./index.js"
+  },
   "scripts": {
     "postinstall": "node scripts/install.js",
     "setup": "node scripts/install.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "clean": "rm -rf output"
   },
-  "engines": { "node": ">=18" },
-  "os": ["darwin"],
+  "engines": {
+    "node": ">=18"
+  },
+  "os": [
+    "darwin"
+  ],
   "license": "MIT"
 }

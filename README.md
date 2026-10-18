@@ -65,6 +65,13 @@ npm run play -- <reel-id>       # a specific reel
 npm run play -- --quicktime     # open in QuickTime Player instead
 ```
 
+Review a transcript in `less` (press `q` to quit, `/` to search):
+
+```bash
+npm run review                  # most recent transcript in output/
+npm run review -- <reel-id>     # a specific reel
+```
+
 Clear all downloaded audio and transcripts:
 
 ```bash

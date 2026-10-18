@@ -13,6 +13,7 @@
     "start": "node index.js",
     "clean": "rm -rf output",
     "play": "node scripts/play.js",
+    "stop": "node scripts/stop.js",
     "review": "node scripts/review.js"
   },
   "engines": {

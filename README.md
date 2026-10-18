@@ -65,6 +65,12 @@ npm run play -- <reel-id>       # a specific reel
 npm run play -- --quicktime     # open in QuickTime Player instead
 ```
 
+Stop playback from another terminal (afplay or QuickTime, only for files in `output/`):
+
+```bash
+npm stop                        # same as npm run stop
+```
+
 Review a transcript in `less` (press `q` to quit, `/` to search):
 
 ```bash
@@ -99,7 +105,10 @@ WHISPER_MODEL=mlx-community/whisper-medium-mlx FB_COOKIES_BROWSER=chrome \
 .
 ├── index.js            # Run phase: download → transcribe → play
 ├── scripts/
-│   └── install.js      # Install phase: dependency checks and setup
+│   ├── install.js      # Install phase: dependency checks and setup
+│   ├── play.js         # Replay an mp3 from output/
+│   ├── stop.js         # Stop playback started by start/play
+│   └── review.js       # Page through a transcript in less
 ├── output/             # Generated mp3 and txt files (git-ignored)
 └── package.json
 ```

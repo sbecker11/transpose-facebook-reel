@@ -48,11 +48,14 @@ This will:
 2. Transcribe it, print the transcript, and save it to `output/<reel-id>.txt`
 3. Play the mp3 (press Ctrl+C to stop)
 
-Transcribe without playing:
+### Options
 
-```bash
-npm start -- "<url>" --no-play
-```
+| Flag         | Effect                                     |
+| ------------ | ------------------------------------------ |
+| `--no-play`  | Don't play the mp3                         |
+| `--no-print` | Don't print the transcript to the terminal |
+
+The transcript is always saved to `output/<reel-id>.txt`. Flags can be combined, e.g. `npm start -- "<url>" --no-play --no-print`.
 
 Clear all downloaded audio and transcripts:
 

@@ -12,9 +12,10 @@ const COOKIES_BROWSER = process.env.FB_COOKIES_BROWSER;
 
 const args = process.argv.slice(2);
 const noPlay = args.includes('--no-play');
+const noPrint = args.includes('--no-print');
 const url = args.find((a) => !a.startsWith('--'));
 if (!url || !/facebook\.com|fb\.watch/.test(url)) {
-  console.error('Usage: npm start -- <facebook-reel-url> [--no-play]');
+  console.error('Usage: npm start -- <facebook-reel-url> [--no-play] [--no-print]');
   process.exit(1);
 }
 
@@ -56,10 +57,14 @@ async function main() {
 
   console.log(`▶ Transcribing with ${MODEL}…`);
   await run(whisper, [mp3, '--model', MODEL, '--output-dir', OUT_DIR, '--output-format', 'txt']);
+
   if (existsSync(txt)) {
-    console.log('\n──────── Transcript ────────\n');
-    console.log(readFileSync(txt, 'utf8').trim());
-    console.log(`\n────────────────────────────\nSaved: ${txt}\n`);
+    if (!noPrint) {
+      console.log('\n──────── Transcript ────────\n');
+      console.log(readFileSync(txt, 'utf8').trim());
+      console.log('\n────────────────────────────\n');
+    }
+    console.log(`✔ Transcript saved: ${txt}`);
   }
 
   if (!noPlay) { console.log('▶ Playing audio (Ctrl+C to stop)…'); await run('afplay', [mp3]); }

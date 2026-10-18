@@ -57,6 +57,14 @@ This will:
 
 The transcript is always saved to `output/<reel-id>.txt`. Flags can be combined, e.g. `npm start -- "<url>" --no-play --no-print`.
 
+Replay audio without re-downloading or re-transcribing:
+
+```bash
+npm run play                    # most recent mp3 in output/
+npm run play -- <reel-id>       # a specific reel
+npm run play -- --quicktime     # open in QuickTime Player instead
+```
+
 Clear all downloaded audio and transcripts:
 
 ```bash

@@ -11,7 +11,8 @@
     "postinstall": "node scripts/install.js",
     "setup": "node scripts/install.js",
     "start": "node index.js",
-    "clean": "rm -rf output"
+    "clean": "rm -rf output",
+    "play": "node scripts/play.js"
   },
   "engines": {
     "node": ">=18"
